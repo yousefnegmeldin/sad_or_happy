@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+/* main stuff */
+body {
+    background-color: #0D1B2A;
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    color : #E0E1DD;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    height:30vh;
+    align-items: center;
+    font-size:3rem;
+    position:relative;
+}
+/* --------------- */
+
+
+
+
+
+/* happy word */
+.happy-word:hover {
+    color:yellow;
+    transition: color 0.2s;
+    cursor:pointer;
+}
+
+.happy-word::before{
+    content:':)';
+    position:absolute;
+    left:1em;
+    transform:translateY(-3rem);
+    opacity:0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.happy-word:hover::before{ 
+    opacity: 1;
+}
+
+
+/* -------------- */
+
+
+
+
+/* sad word */
+
+.sad-word:hover {
+    color:#415A77;
+    transition: color 0.2s;
+    cursor:pointer;
+}
+
+.sad-word::before{
+    content:'):';
+    position:absolute;
+    left:0.6em;
+    transform:translateY(-3rem);
+    opacity:0;
+    transition: opacity 0.5s ease-in;
+    
+}
+
+.sad-word:hover::before{ 
+    opacity: 1;
+}
+
+/* -------------- */
+
+/* word itself */
+
+.word::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 4px;
+    bottom: -10px;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.word:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.word {
+    display:inline-block;
+    position:relative;
+}
+
+/* ----------------- */
+
+.click {
+    position:absolute;
+    bottom:4rem;
+    font-size: 1rem;
+    padding:5px;
+    opacity:0;
+    transition:opacity 1s;
+    color:yellow;
+}
+
+.dont {
+    position:absolute;
+    bottom:4rem;
+    font-size: 1rem;
+    padding:5px;
+    opacity:0;
+    transform:translateX(11.5rem);
+    transition: opacity 1s;
+    color:#778DA9;
+}
+
+.flashing {
+    opacity:1;
+}
+
+.second-container{
+    display:flex;
+    justify-content: center;
+    height:30vh;
+    flex-direction: column;
+    align-items: center;
+    position:relative;
+}
+
+.answer1{
+    font-size:2rem;
+    padding:10px;
+    text-align:center;
+}
+
+.will-it{
+    position:absolute;
+    bottom:5rem;
+    opacity:0;
+    transform: translateX(16rem);
+    color:#415A77;
+    font-size: 2rem;
+    text-decoration: underline;
+}
+
+.answer1 {
+    opacity:0;
+}
+.appear {
+    opacity:1;
+    transition: opacity 1s ease-in-out;
+}
+
+.fine {
+    position:absolute;
+}
+.fine.rotate{
+    transform: rotate(78deg);
+    transform-origin: bottom left;
+    position:absolute;
+    transition:transform 2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.fine.rotate.zoom-down {
+    transform: translateY(40rem);
+    display:inline-block;
+}
+
+
+
+@media (max-width:600px){
+    body {
+        font-size:1rem;
+    }
+    .main-container{
+        display: flex;
+        justify-content: center;
+        height:30vh;
+        align-items: center;
+        font-size:2rem;
+        position:relative;
+    }
+    .click {
+        position:absolute;
+        bottom:4rem;
+        font-size: 1rem;
+        padding:5px;
+        opacity:0;
+        transition:opacity 1s;
+        color:yellow;
+    }
+    
+    .dont {
+        text-align:justify;
+        position:absolute;
+        bottom:4rem;
+        font-size: 1rem;
+        padding:5px;
+        opacity:0;
+        transform:translateX(8rem);
+        transition: opacity 2s;
+        color:#778DA9;
+    }
+    .flashing {
+        opacity:1;
+    }
+    .second-container {
+        font-size:1rem;
+    }
+    .answer1 {
+        font-size: 1rem;
+    }
+
+    .will-it{ 
+        position:absolute;
+        bottom:6rem;
+        opacity:0;
+        transform: translateX(7rem);
+        color:#415A77;
+        font-size: 1rem;
+        text-decoration: underline;
+    }
+    .will-it.appear {
+        opacity: 1;
+    }
+}
